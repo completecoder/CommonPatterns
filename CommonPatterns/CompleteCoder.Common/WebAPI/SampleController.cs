@@ -8,8 +8,8 @@ namespace CompleteCoder.Common.WebAPI
 {
     public class ApplicationsController : ApiController
     {
-        private IRepository<object> Repository;
-        public ApplicationsController(IRepository<object> repository)
+        private IRepository<SampleModel> Repository;
+        public ApplicationsController(IRepository<SampleModel> repository)
         {
             this.Repository = repository;
         }
@@ -49,7 +49,7 @@ namespace CompleteCoder.Common.WebAPI
 
         // POST: api/Applications
         [HttpPost]
-        public IHttpActionResult Post([FromBody]Application newObject)
+        public IHttpActionResult Post([FromBody]SampleModel newObject)
         {
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
 
@@ -67,7 +67,7 @@ namespace CompleteCoder.Common.WebAPI
         }
 
         [HttpPut]
-        public IHttpActionResult Put(Application updatedObject)
+        public IHttpActionResult Put(SampleModel updatedObject)
         {
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
 
